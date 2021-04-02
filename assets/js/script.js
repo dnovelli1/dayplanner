@@ -16,7 +16,7 @@ var dayTime = $('#currentDay');
 var realTime = moment();
 dayTime.text(realTime.format('MMM DD, YYYY [at] hh:mm:ss a'));
 
-// Set time in hours to compare to name's changing the string to a number with parse int.
+// Set time in hours to compare to name's, changing the string to a number with parse int.
 var currentTime = parseInt(realTime.format('H'));
 
 // Function for each row

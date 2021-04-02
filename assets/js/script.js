@@ -21,7 +21,7 @@ var currentTime = parseInt(realTime.format('H'));
 
 // Function for each row
 $('.row').each(function (i, row) {
-    // This sets the string to a number.
+    // This changes every id to a number and assigns in to a variable.
     var time = parseInt($(this).attr('id'));
     // All if statements declared with relation to current time, and adding the appropriate class that was given.
     if(currentTime > time) {

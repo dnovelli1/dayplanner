@@ -6,6 +6,9 @@
 // Create a function that will relate the user's input with the time-block
 // Create a function that will then relate the time block the user entered with the time of day tracker
 
+
+
+// Set global variables
 var saveBtn = $('.saveBtn');
 var dayTime = $('#currentDay');
 
@@ -30,28 +33,33 @@ $('.row').each(function (i, row) {
     }
 })
 
-
+// Function to render what was saved to local storage.
 function renderLastEvent() {
+    // Created an array and filled it with an empty string to avoid null autofilling
     var arr = Array(9).fill("");
+    // Retrieving the local storage, if there is nothing in local storage for the index. then set to an empty string.
     var lastEvent = JSON.parse(localStorage.getItem("userEvent")) || arr;
     $('.description').each(function(i) {
         $(this).val(lastEvent[i]);
     })  
 }
+// Calling the function to run on load.
 renderLastEvent();
 
-
+// Save function that runs when the user clicks the save button.
 function saveEvent() {
+    // Setting an empty array to a variable
     var inputArr = [];
+    // Setting a function for each description
     $('.description').each(function() {
         var userEvent = $(this).val();
         console.log(userEvent);
         inputArr.push(userEvent);
     })
-
+    // Saves items to local storage and converts to a string.
     localStorage.setItem("userEvent", JSON.stringify(inputArr));
 };
-
+// Created an event on clicking the save button.
 saveBtn.on('click', function(event) {
     saveEvent();
 });

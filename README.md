@@ -1,1 +1,3 @@
 # Day Planner
+
+    In this project I was given a basic set up of HTML and CSS. No Javascript! I was assigned the task of building a day planner that a user could enter in events and save them. Each time slot would need to be color coated so the user could identify if they are in the past, present or future. The user could also refresh the page or bring it up later and the site would still be saved how they left it. I'm happy to say I conquered all of these tasks. With the help of Bootstrap, jQuery and Moment.js I was able to create a day planner that will save all of your activities for the day.

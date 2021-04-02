@@ -8,40 +8,50 @@
 
 var saveBtn = $('.saveBtn');
 var dayTime = $('#currentDay');
-var userInput = $('.description');
 
 // Current time track
 var realTime = moment();
 dayTime.text(realTime.format('MMM DD, YYYY [at] hh:mm:ss a'));
 
-// Set time in hours to compare to name's
-var currentTime = realTime.format('H');
+// Set time in hours to compare to name's changing the string to a number with parse int.
+var currentTime = parseInt(realTime.format('H'));
+
+// Function for each row
+$('.row').each(function (i, row) {
+    // This sets the string to a number.
+    var time = parseInt($(this).attr('id'));
+    // All if statements declared with relation to current time, and adding the appropriate class that was given.
+    if(currentTime > time) {
+        $(this).children('.description').addClass('past');
+    } else if (currentTime === time) {
+        $(this).children('.description').addClass('present');
+    } else {
+        $(this).children('.description').addClass('future');
+    }
+})
 
 
+function renderLastEvent() {
+    var arr = Array(9).fill("");
+    var lastEvent = JSON.parse(localStorage.getItem("userEvent")) || arr;
+    $('.description').each(function(i) {
+        $(this).val(lastEvent[i]);
+    })  
+}
+renderLastEvent();
 
 
-// function saveEvent() {
-//     var userEvent = userInput.value;
-//     localStorage.setItem("userEvent", JSON.stringify(userEvent))
-// };
+function saveEvent() {
+    var inputArr = [];
+    $('.description').each(function() {
+        var userEvent = $(this).val();
+        console.log(userEvent);
+        inputArr.push(userEvent);
+    })
 
-// function renderLastEvent() {
-//     var lastEvent = JSON.parse(localStorage.getItem("userEvent"));
+    localStorage.setItem("userEvent", JSON.stringify(inputArr));
+};
 
-//     if( lastEvent !== null) {
-//         $('.description').innerHTML = lastEvent.userEvent;
-//     } else {
-//         return;
-//     }
-// };
-
-// saveBtn.on('click', function(event) {
-//     event.preventDefault();
-//     saveEvent();
-//     renderLastEvent();
-// });
-
-// function init() {
-//     renderLastEvent();
-// }
-// init();
+saveBtn.on('click', function(event) {
+    saveEvent();
+});

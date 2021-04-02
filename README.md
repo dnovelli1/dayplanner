@@ -31,4 +31,12 @@
 
 
 ## How it was made!
+``HTML
+
+![Code-Snippet](assets/images/htmlsnippet.PNG)
+
+
+
 ``Javascript
+
+![Code-Snippet](assets/images/javascriptsnippet.PNG)

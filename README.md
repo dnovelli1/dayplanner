@@ -24,3 +24,11 @@
     - Rows / Columns
 
 - Moment.js - a Javascript library that helps displaying date/time.
+
+## Site Preview
+
+![Site](assets/images/websitesneakpeek.PNG)
+
+
+## How it was made!
+``Javascript

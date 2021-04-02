@@ -40,3 +40,15 @@
 ``Javascript
 
 ![Code-Snippet](assets/images/javascriptsnippet.PNG)
+
+
+
+## The full quiz is deployed here! Click the link to have a look!
+
+[Full-Site](https://dnovelli1.github.io/dayplanner/)
+
+## Links to my other Professional Site's!
+
+[LinkedIn](https://www.linkedin.com/in/david-jacob-novelli/)
+
+[GitHub](https://github.com/dnovelli1)
